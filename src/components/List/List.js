@@ -43,6 +43,7 @@ const List = () => {
                   >
                     {(provided) => (
                       <ListItem
+                        key={index}
                         ref={provided.innerRef}
                         color={data.new_color}
                         {...provided.draggableProps}
@@ -50,9 +51,10 @@ const List = () => {
                       >
                         <ColorValue>{`#${data.new_color}`}</ColorValue>
                         <ColorNameWrapper>
-                          {data.colors[0].tags.map((values) => (
-                            <ColorName>{values.name}</ColorName>
-                          ))}
+                          {data.colors &&
+                            data.colors[0].tags.map((values) => (
+                              <ColorName>{values.name}</ColorName>
+                            ))}
                         </ColorNameWrapper>
                       </ListItem>
                     )}

@@ -34,10 +34,6 @@ export const Container = styled.div`
   position: relative;
   overflow: hidden;
   margin: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   @media screen and (${breakpoints.mobileLarge}) {
     margin: 24px;
   }
@@ -72,6 +68,23 @@ export const CloseButton = styled(MdClose)`
   }
 `;
 
+export const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const FormRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const Label = styled.label`
+  margin-bottom: 8px;
+`;
+
 export const ColorInput = styled.input`
   width: 100%;
   padding: 10px;
@@ -85,4 +98,11 @@ export const ColorInput = styled.input`
   @media screen and (${breakpoints.tablet}) {
     width: 400px;
   }
+`;
+
+export const InputError = styled.p`
+  font-size: 14px;
+  color: red;
+  margin-top: -16px;
+  margin-bottom: 24px;
 `;

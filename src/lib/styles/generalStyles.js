@@ -31,4 +31,20 @@ export const ButtonRows = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+
+  @media screen and (${breakpoints.tablet}) {
+    flex-direction: row;
+  }
+`;
+
+export const SearchBar = styled.input`
+  width: 100%;
+  padding: 10px;
+  margin: 16px 0px;
+
+  @media screen and (${breakpoints.tablet}) {
+    width: 400px;
+    margin: 0px 16px;
+  }
 `;
