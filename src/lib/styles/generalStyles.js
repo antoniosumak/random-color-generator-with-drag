@@ -15,6 +15,7 @@ export const Button = styled.button`
   color: white;
   border: 1px solid ${colors.orange};
   transition: 0.3s ease-in-out;
+
   &:hover {
     color: ${colors.orange};
     border: 1px solid ${colors.orange};
@@ -23,28 +24,11 @@ export const Button = styled.button`
   }
   @media screen and (${breakpoints.tablet}) {
     width: 250px;
-    margin: 0 auto;
   }
 `;
 
-export const List = styled.ul`
-  list-style: none;
-  max-height: 80vh;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-export const ListItem = styled.li`
-  background-color: ${(props) => `#${props.color}`};
-  padding: 32px;
+export const ButtonRows = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
-
-export const ColorValue = styled.p``;

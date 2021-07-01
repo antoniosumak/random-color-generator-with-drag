@@ -4,6 +4,8 @@ import { breakpoints } from '../../lib/styles/theme';
 export const SectionWrapper = styled.section`
   padding: 40px 15px;
   width: 100%;
+
+  overflow: hidden;
   @media screen and (${breakpoints.tablet}) {
     padding: 64px 40px;
   }
