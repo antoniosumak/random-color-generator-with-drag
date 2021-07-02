@@ -1,14 +1,18 @@
 import React, { useContext } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+
+//Styles
 import {
   List as ListWrapper,
   ListItem,
   ColorValue,
   ColorNameWrapper,
   ColorName,
+  NoContent,
 } from './ListStyles';
-import { Grid } from '../../lib/styles/generalStyles';
+import { Grid, Center } from '../../lib/styles/generalStyles';
 
+//Context
 import { ColorsContext } from '../../context/ColorsContext';
 
 const List = () => {
@@ -34,7 +38,7 @@ const List = () => {
             ref={provided.innerRef}
           >
             <Grid>
-              {colors &&
+              {colors.length !== 0 ? (
                 colors.map((data, index) => (
                   <Draggable
                     key={index}
@@ -50,16 +54,23 @@ const List = () => {
                         {...provided.dragHandleProps}
                       >
                         <ColorValue>{`#${data.new_color}`}</ColorValue>
-                        <ColorNameWrapper>
+                        <ColorNameWrapper background={data.colors}>
                           {data.colors &&
-                            data.colors[0].tags.map((values) => (
-                              <ColorName>{values.name}</ColorName>
+                            data.colors[0].tags.map((values, index) => (
+                              <ColorName key={index} background={values.name}>
+                                {values.name}
+                              </ColorName>
                             ))}
                         </ColorNameWrapper>
                       </ListItem>
                     )}
                   </Draggable>
-                ))}
+                ))
+              ) : (
+                <Center>
+                  <NoContent>Color container is empty!</NoContent>
+                </Center>
+              )}
               {provided.placeholder}
             </Grid>
           </ListWrapper>

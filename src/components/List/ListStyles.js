@@ -34,11 +34,17 @@ export const ColorNameWrapper = styled.div`
   display: flex;
   padding: 10px;
   color: ${colors.white};
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: ${(props) => props.background && 'rgba(0,0,0,0.4)'};
   border-radius: 8px;
 `;
 
 export const ColorName = styled.p`
   padding: 0px 3px;
+  font-weight: bold;
+`;
+
+export const NoContent = styled.h2`
+  font-size: 24px;
+  color: ${colors.orange};
   font-weight: bold;
 `;

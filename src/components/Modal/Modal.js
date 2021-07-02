@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { ColorsContext } from '../../context/ColorsContext';
 
-// Styled components
+// Stlyes
 import {
   Overlay,
   Wrapper,
@@ -17,7 +17,6 @@ import {
   InputError,
   ColorInput,
 } from './ModalStyles';
-
 import { Button } from '../../lib/styles/generalStyles';
 
 const Modal = ({ modalOpen, title }) => {
